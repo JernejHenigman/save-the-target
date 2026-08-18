@@ -1,0 +1,4 @@
+﻿.godot/
+*.keystore
+keystore_base64.txt
+build/
