@@ -35,11 +35,11 @@ jobs:
         run: |
           echo "$KEYSTORE_B64" | base64 --decode > /tmp/release.keystore
 
-      # 5. Export Android AAB via Godot Engine
+      # 5. Export Android AAB via Godot Engine matching local version 4.7.2
       - name: Godot Android Export
         uses: dulvui/godot-android-export@v4
         with:
-          godot-version: 4.3
+          godot-version: 4.7.2
           working-directory: .
           export-debug: false
         env:
