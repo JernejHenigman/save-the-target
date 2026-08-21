@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="SaveTheTarget"
-run/main_scene="uid://dky0faebxfv07"
+run/main_scene="uid://bv6v3h2u57w8e"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 

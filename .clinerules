@@ -1,0 +1,27 @@
+# Save The Target - Development & Coding Rules
+
+## Project Environment
+- Engine: Godot 4.7.x / 4.x (Compatibility Renderer)
+- Language: GDScript 2.0 (Strictly Godot 4 syntax)
+- Platforms: Android (Primary), iOS
+- Resolution: Portrait (1080x1920)
+
+## GDScript 2.0 Syntax Standards (STRICT)
+1. Godot 4 Annotations:
+   - Use `@onready` (NOT `onready var`).
+   - Use `@export` (NOT `export var`).
+   - Use `@export_range(...)` and `@export_category(...)` for tuning knobs.
+2. Static Typing:
+   - Every variable, parameter, and function return MUST have explicit types.
+   - Example: `func apply_damage(amount: float) -> void:`
+3. Node Classes:
+   - Use `CharacterBody2D` (NOT `KinematicBody2D`).
+   - Use `Geometry2D.offset_polyline()` for stroke dilation/colliders.
+4. Signal Architecture:
+   - Use typed signals: `signal target_stung(by_bee: CharacterBody2D)`
+   - Connect signals using Callables: `timer.timeout.connect(_on_timeout)` (NOT strings).
+
+## Project Architecture
+- `res://scenes/`: `.tscn` scene files only.
+- `res://scripts/`: `.gd` script files only.
+- Modular vertical slice approach: Keep LineDrawer, Target, Bee, and LevelManager decoupled.
